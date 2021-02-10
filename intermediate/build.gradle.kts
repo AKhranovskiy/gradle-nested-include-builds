@@ -3,8 +3,7 @@ plugins {
     `kotlin-dsl`
     id("org.jetbrains.kotlin.jvm") version "1.4.20"
 
-    // This line cause build error.
-    // id("nested-gradle-plugin") apply true
+    id("nested-gradle-plugin") apply true
 }
 
 repositories {
