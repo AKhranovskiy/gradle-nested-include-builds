@@ -1,2 +1,4 @@
-rootProject.name = "top"
-includeBuild("intermediate")
+rootProject.name = "Sample"
+
+includeBuild("platform")
+includeBuild("product")

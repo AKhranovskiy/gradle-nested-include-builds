@@ -1,9 +1,14 @@
-Minimal working example of broken Gradle configuration with nested included builds.
+Minimal working example of broken Android Studio sync of double included builds
 
-`:intermediate` and `:nested` are Gradle plugins.
+There two projects `platform` and `product`.
+Both are included in the root level as included build.
+The product also includes the platform.
 
-Project `:top` includes `:intermediate`.
-`:intermediate` includes `:nested`.
+Android Studio fails to sync the project on Gradle 7.2 but works well on Gradle 7.1.
 
-`:top` applies both plugins fine.
-`:intermediate` fails to apply `:nested`.
+```
+No model of type 'TurnOffDefaultTasks' is available in this build.
+> No builders are available to build a model of type 'org.jetbrains.plugins.gradle.model.internal.TurnOffDefaultTasks'.
+```
+
+IntelliJ Gradle plugin 203.7717.56.2031.7678000
